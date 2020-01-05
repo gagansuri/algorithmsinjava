@@ -1,5 +1,15 @@
 public class AddTwoLargeIntegers {
 
+//TODO: will do later
+    public ListNode addTwoNumbersRecursive(ListNode l1, ListNode l2) {
+        if(l1!=null && l2!=null) {
+
+        }
+
+        return null;
+    }
+
+
 
     /**
  * Definition for singly-linked list.
@@ -80,4 +90,46 @@ public class AddTwoLargeIntegers {
       ListNode next;
       ListNode(int x) { val = x; }
  }
- }
+
+
+    public void client() {
+        int[] one={3,5,6,7,8};  //8756
+        int[] two={4,6,7,8,9};  // 98764
+        ListNode number1=createList(one);
+        ListNode number2=createList(two);
+        printNumber(number1);
+        printNumber(number2);
+        ListNode result=addTwoNumbers(number1,number2);
+        printNumber(result);
+
+    }
+
+
+    public void printNumber(ListNode n) {
+        StringBuilder number=new StringBuilder();
+        while(n!=null) {
+            number.append(n.val);
+            n=n.next;
+        }
+        System.out.println(number.reverse().toString());
+    }
+
+
+    public static void main(String[] args) {
+        AddTwoLargeIntegers addTwoLargeIntegers=new AddTwoLargeIntegers();
+        addTwoLargeIntegers.client();
+    }
+
+    private ListNode createList(int[] one) {
+        ListNode root = new ListNode(one[0]);
+        ListNode temp = root;
+        for (int i = 1; i < one.length; i++) {
+            ListNode node = new ListNode(one[i]);
+            node.next = null;
+            temp.next = node;
+            temp = node;
+        }
+
+        return root;
+    }
+}
