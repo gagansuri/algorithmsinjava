@@ -1,12 +1,6 @@
-/**
- * Definition for a binary tree node.
- * public class TreeNode {
- *     int val;
- *     TreeNode left;
- *     TreeNode right;
- *     TreeNode(int x) { val = x; }
- * }
- */
+ //Definition for a binary tree node.
+import java.util.Stack;
+
 public class TwoStackPathSum {
     public boolean hasPathSum(TreeNode root, int sum) {
         //checkPathSum(root,sum,0);
@@ -18,7 +12,7 @@ public class TwoStackPathSum {
         Stack<Integer> sumStack =new Stack<>();
         stack.push(root);
         sumStack.push(0);
-        int calSum=0;
+
         while(true) {
             if(!stack.isEmpty()) {
                 //System.out.println("stack-->"+stack +" sumStack -->"+sumStack);
@@ -39,6 +33,16 @@ public class TwoStackPathSum {
             }
     }
     }
-    
-    
+
+    class TreeNode {
+        int val;
+        TreeNode left;
+        TreeNode right;
+        TreeNode(int x) { val = x; }
+    }
+
+    private void createTree() {
+        //[5,4,8,11,null,13,4,7,2,null,null,null,1]
+
+    }
 }
