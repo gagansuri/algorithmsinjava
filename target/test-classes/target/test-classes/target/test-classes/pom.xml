@@ -10,14 +10,6 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>algorithm1</artifactId>
-<dependencies>
-    <dependency>
-        <groupId>com.sample</groupId>
-        <artifactId>sample</artifactId>
-        <version>1.0</version>
-        <scope>system</scope>
-        <systemPath>${project.basedir}/src/main/resources/algs.jar</systemPath>
-    </dependency>
-</dependencies>
+
 
 </project>
