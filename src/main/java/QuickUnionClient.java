@@ -1,3 +1,5 @@
+import com.passion.study.coursera.algorithms.part1.unionfind.practice.QuickFind;
+
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
@@ -7,11 +9,12 @@ public class QuickUnionClient {
     public static void main(String[] args) throws Exception {
         //read from file
         File file = new File(
-                QuickUnionClient.class.getClassLoader().getResource("UFInput.txt").getFile()
+                QuickUnionClient.class.getClassLoader().getResource("/UFInput.txt").getFile()
         );
         BufferedReader br=new BufferedReader(new FileReader(file));
         int n = Integer.parseInt(br.readLine().trim());
-        QuickUnion uf=new QuickUnion(n);
+        //QuickUnion uf=new QuickUnion(n);
+        QuickFind uf=new QuickFind(n);
         String line=null;
         while((line=br.readLine())!=null) {
             int p = Integer.parseInt(line.split(" ")[0]);

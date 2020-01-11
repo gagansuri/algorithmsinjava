@@ -1,4 +1,4 @@
-public class QuickUnion {
+public class QuickUnion implements QuickUnionInterface {
 
     private int id[];
     private int N;
