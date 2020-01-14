@@ -11,13 +11,13 @@
 
     <artifactId>algorithm1</artifactId>
 <dependencies>
-    <dependency>
+   <!-- <dependency>
         <groupId>com.sample</groupId>
         <artifactId>sample</artifactId>
         <version>1.0</version>
         <scope>system</scope>
         <systemPath>${project.basedir}/src/main/resources/algs.jar</systemPath>
-    </dependency>
+    </dependency>-->
 </dependencies>
 
 </project>

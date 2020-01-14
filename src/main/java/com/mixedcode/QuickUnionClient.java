@@ -1,6 +1,6 @@
-package com.passion.study.coursera.algorithms.part1.unionfind;
+package com.mixedcode;
 
-import com.passion.study.coursera.algorithms.part1.unionfind.practice.QuickUnion;
+import com.passion.study.coursera.algorithms.part1.unionfind.practice.QuickFind;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -16,7 +16,7 @@ public class QuickUnionClient {
         BufferedReader br=new BufferedReader(new FileReader(file));
         int n = Integer.parseInt(br.readLine().trim());
         //QuickUnion uf=new QuickUnion(n);
-        QuickUnion uf=new QuickUnion(n);
+        QuickFind uf=new QuickFind(n);
         String line=null;
         while((line=br.readLine())!=null) {
             int p = Integer.parseInt(line.split(" ")[0]);
@@ -24,8 +24,6 @@ public class QuickUnionClient {
             if(!uf.connected(p,q)) {
                 uf.union(p, q);
                 System.out.println("p->"+p+" q->"+q);
-                uf.printNodes();
-                System.out.println();
             }
         }
         br.close();

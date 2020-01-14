@@ -1,22 +1,22 @@
-package com.passion.study.coursera.algorithms.part1.unionfind;
+package com.mixedcode;
 
-import com.passion.study.coursera.algorithms.part1.unionfind.practice.QuickUnion;
+import com.passion.study.coursera.algorithms.part1.unionfind.UnionFind;
 
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 
-public class QuickUnionClient {
+public class UnionFindClient {
 
     public static void main(String[] args) throws Exception {
         //read from file
         File file = new File(
-                QuickUnionClient.class.getClassLoader().getResource("UFInput.txt").getFile()
+                UnionFindClient.class.getClassLoader().getResource("UFInput.txt").getFile()
         );
         BufferedReader br=new BufferedReader(new FileReader(file));
         int n = Integer.parseInt(br.readLine().trim());
-        //QuickUnion uf=new QuickUnion(n);
-        QuickUnion uf=new QuickUnion(n);
+        //UnionFind uf=new UnionFind(n);
+        UnionFind uf=new UnionFind(n);
         String line=null;
         while((line=br.readLine())!=null) {
             int p = Integer.parseInt(line.split(" ")[0]);
@@ -24,8 +24,6 @@ public class QuickUnionClient {
             if(!uf.connected(p,q)) {
                 uf.union(p, q);
                 System.out.println("p->"+p+" q->"+q);
-                uf.printNodes();
-                System.out.println();
             }
         }
         br.close();

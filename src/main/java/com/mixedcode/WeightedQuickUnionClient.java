@@ -1,34 +1,29 @@
-package com.passion.study.coursera.algorithms.part1.unionfind;
-
-import com.passion.study.coursera.algorithms.part1.unionfind.practice.QuickUnion;
+package com.mixedcode;
 
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 
-public class QuickUnionClient {
+public class WeightedQuickUnionClient {
 
     public static void main(String[] args) throws Exception {
         //read from file
         File file = new File(
-                QuickUnionClient.class.getClassLoader().getResource("UFInput.txt").getFile()
+                WeightedQuickUnionClient.class.getClassLoader().getResource("UFInput.txt").getFile()
         );
         BufferedReader br=new BufferedReader(new FileReader(file));
         int n = Integer.parseInt(br.readLine().trim());
-        //QuickUnion uf=new QuickUnion(n);
-        QuickUnion uf=new QuickUnion(n);
+        WeightedQuickUnion wQU=new WeightedQuickUnion(n);
         String line=null;
         while((line=br.readLine())!=null) {
             int p = Integer.parseInt(line.split(" ")[0]);
             int q = Integer.parseInt(line.split(" ")[1]);
-            if(!uf.connected(p,q)) {
-                uf.union(p, q);
+            if(!wQU.connected(p,q)) {
+                wQU.union(p, q);
                 System.out.println("p->"+p+" q->"+q);
-                uf.printNodes();
-                System.out.println();
             }
         }
         br.close();
-        uf.printNodes();
+        wQU.printNodes();
     }
 }
