@@ -30,7 +30,14 @@ public class LongestSubStringWithoutRepeatingCharacters  {
 
     public static void main(String[] args) {
         //uniqueLengthSubString("abcabcbb");
-        getUniqueCharacterSubstringBruteForce("abcabcbb");
+        //getUniqueCharacterSubstringBruteForce("abcabcbb");
+        String input="CODINGISAWESOME";
+        input="abcabcbb";
+        //input=" ";
+        input = "abba";
+        //String output =unqieCharsLongestSubstring(input);
+        String output = unqieCharsLongestSubstringOptimized(input);
+        System.out.println("output -> "+output);
     }
 
 
@@ -74,17 +81,52 @@ public class LongestSubStringWithoutRepeatingCharacters  {
 
 
 public static String unqieCharsLongestSubstring(String input) {
+    String finalSubstring="";
+    int size=0;
     for(int i=0;i<input.length();i++) {
-        for(int j=0;j<input.length();j++) {
-        char c = input.charAt(j);
-        
+        Set<Character> nonrepeatedCharsSet=new HashSet<>();
+        String substring="";
+        int j=i;
+        for(;j<input.length();j++) {
+            char c = input.charAt(j);
+            if(!nonrepeatedCharsSet.contains(c)) {
+                nonrepeatedCharsSet.add(c);
+            } else {
+                substring=input.substring(i,j);
+                break;
+            }
 
         }
+        /*if(substring.length()>finalSubstring.length()) {
+            finalSubstring=substring;
+        }*/
 
-
+        if(finalSubstring.length() > j-i+1) {
+            finalSubstring=input.substring(i,j);
+        }
     }
 
+    return finalSubstring;
 
+
+}
+
+public static String unqieCharsLongestSubstringOptimized(String input) {
+
+    Map<Character,Integer> visited=new HashMap<>();
+    String output="";
+    for(int start=0,end=0;end<input.length();end++) {
+        Character c = input.charAt(end);
+        if(visited.keySet().contains(c)) {
+            start = Math.max(visited.get(c)+1,start);
+        }
+
+        if(output.length() < (end-start+1)) {
+            output = input.substring(start,end+1);
+        }
+        visited.put(input.charAt(end),end);
+    }
+    return output;
 }
 
 

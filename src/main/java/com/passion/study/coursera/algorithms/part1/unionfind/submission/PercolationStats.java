@@ -1,4 +1,4 @@
-//package com.passion.study.coursera.algorithms.part1.unionfind.submission;
+package com.passion.study.coursera.algorithms.part1.unionfind.submission;
 
 public class PercolationStats {
 
